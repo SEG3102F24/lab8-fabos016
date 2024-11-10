@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EmployeeComponent } from './employee.component';
+import { ApolloTestingModule } from 'apollo-angular/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('EmployeeComponent', () => {
   let component: EmployeeComponent;
@@ -8,7 +10,7 @@ describe('EmployeeComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [EmployeeComponent]
+    imports: [EmployeeComponent, ApolloTestingModule, RouterTestingModule]
 });
     fixture = TestBed.createComponent(EmployeeComponent);
     component = fixture.componentInstance;
