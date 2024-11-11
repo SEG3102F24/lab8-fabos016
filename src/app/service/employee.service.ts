@@ -7,7 +7,7 @@ import {gql} from "@apollo/client/core";
 const GET_EMPLOYEES = gql`
 query {
   employees {
-    id
+    employeeId
     name
     dateOfBirth
     city
@@ -26,7 +26,6 @@ mutation addEmployee($name: String!,
   $gender: String!,
   $email: String!) {
   newEmployee(createEmployeeInput: {name: $name, dateOfBirth: $dateOfBirth, city: $city, salary: $salary, gender: $gender, email: $email}) {
-    id
     name
     dateOfBirth
     city
@@ -40,6 +39,7 @@ mutation addEmployee($name: String!,
 @Injectable({
   providedIn: 'root'
 })
+
 export class EmployeeService {
   employees$: BehaviorSubject<readonly Employee[]> = new BehaviorSubject<readonly Employee[]>([]);
 
